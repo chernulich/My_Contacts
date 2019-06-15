@@ -3,6 +3,9 @@ package com.telran.contacts.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
@@ -14,17 +17,19 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "PHONE_NUMBERS")
-public class PhoneNumber {
+public class PhoneNumber implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "phone_number_id")
     private Long phoneNumberId;
 
-    @Column(name = "date_created", columnDefinition = "datetime")
+    @Column(name = "date_created")
+    @Past
     private LocalDateTime createdDate;
 
     @Column(name = "phone_number", unique = true)
+    @NotBlank
     private String phoneNumber;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)

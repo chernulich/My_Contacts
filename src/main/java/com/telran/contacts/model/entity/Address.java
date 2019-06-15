@@ -3,6 +3,7 @@ package com.telran.contacts.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "ADDRESSES")
 
-public class Address {
+public class Address implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,9 +1,7 @@
 package com.telran.contacts.model.dto;
 
-import com.telran.contacts.model.entity.Address;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -12,19 +10,17 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Builder
-public class ContactDTO {
+public class ContactDto {
 
     private Long userId;
 
     private String fullName;
 
-    private LocalDateTime dateCreated;
-
     private String email;
 
     private List<String> phoneNumbers;
 
-    private List<Address> addresses;
+    private List<AddressDto> addresses;
 
 
 }

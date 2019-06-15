@@ -12,7 +12,7 @@ public interface PhoneNumberRepository<deleteAllByUser> extends JpaRepository<Ph
 
     void deleteAllByUser(User user);
 
-//    PhoneNumber findByPhoneNumber(String phoneNumber);
+    PhoneNumber findPhoneNumberByPhoneNumber(String number);
 
 
 }
