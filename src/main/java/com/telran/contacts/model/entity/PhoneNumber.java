@@ -28,7 +28,7 @@ public class PhoneNumber implements Serializable {
     @Past
     private LocalDateTime createdDate;
 
-    @Column(name = "phone_number", unique = true)
+    @Column(name = "phone_number")//TODO unique = true
     @NotBlank
     private String phoneNumber;
 
